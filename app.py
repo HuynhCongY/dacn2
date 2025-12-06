@@ -39,6 +39,11 @@ if 'notification_messages' not in st.session_state:
     st.session_state.notification_messages = []
 
 
+def should_show_reminder(reminder_minutes):
+    """Helper function to determine if reminder should be displayed"""
+    return reminder_minutes is not None and reminder_minutes > 0
+
+
 def show_add_event_page():
     """Trang thêm sự kiện"""
     st.title("📅 Thêm sự kiện mới")
@@ -74,16 +79,16 @@ def show_add_event_page():
                 st.subheader("📋 Thông tin đã trích xuất:")
                 
                 st.write(f"**Tên sự kiện:** {result['event_name']}")
-                st.write(f"🕐 **Thời gian:** {result['start_time'].strftime('%H:%M - %d/%m/%Y')}")
+                st.write(f"{ICON_TIME} **Thời gian:** {result['start_time'].strftime(DATETIME_FORMAT)}")
                 
                 if result.get('location'):
-                    st.write(f"📍 **Địa điểm:** {result['location']}")
+                    st.write(f"{ICON_LOCATION} **Địa điểm:** {result['location']}")
                 
-                if result.get('reminder_minutes') and result['reminder_minutes'] > 0:
-                    st.write(f"⏰ **Nhắc trước:** {result['reminder_minutes']} phút")
+                if should_show_reminder(result.get('reminder_minutes')):
+                    st.write(f"{ICON_REMINDER} **Nhắc trước:** {result['reminder_minutes']} phút")
                 
                 if result.get('description'):
-                    st.write(f"📝 **Mô tả:** {result['description']}")
+                    st.write(f"{ICON_DESCRIPTION} **Mô tả:** {result['description']}")
                 
                 # Lưu vào database
                 event_id = st.session_state.db.add_event(result)
@@ -285,16 +290,16 @@ def show_event_card(event, key_prefix=""):
         
         with col1:
             st.markdown(f"### {event['event_name']}")
-            st.write(f"🕐 **Thời gian:** {event['start_time'].strftime('%H:%M - %d/%m/%Y')}")
+            st.write(f"{ICON_TIME} **Thời gian:** {event['start_time'].strftime(DATETIME_FORMAT)}")
             
             if event.get('location'):
-                st.write(f"📍 **Địa điểm:** {event['location']}")
+                st.write(f"{ICON_LOCATION} **Địa điểm:** {event['location']}")
             
-            if event.get('reminder_minutes') and event['reminder_minutes'] > 0:
-                st.write(f"⏰ **Nhắc trước:** {event['reminder_minutes']} phút")
+            if should_show_reminder(event.get('reminder_minutes')):
+                st.write(f"{ICON_REMINDER} **Nhắc trước:** {event['reminder_minutes']} phút")
             
             if event.get('description'):
-                st.write(f"📝 **Mô tả:** {event['description']}")
+                st.write(f"{ICON_DESCRIPTION} **Mô tả:** {event['description']}")
         
         with col2:
             if st.button("✏️ Sửa", key=f"{key_prefix}_edit_{event['id']}"):
