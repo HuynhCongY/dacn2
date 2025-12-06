@@ -11,7 +11,10 @@ from database.db_manager import DatabaseManager
 from nlp.nlp_pipeline import VietnameseNLPPipeline
 from reminder.reminder_system import ReminderSystem
 from utils.export_import import ExportImport
-from utils.constants import *
+from utils.constants import (
+    PAGE_TITLE, PAGE_ICON, DEFAULT_DB_PATH,
+    DATETIME_FORMAT, ICON_TIME, ICON_LOCATION, ICON_REMINDER, ICON_DESCRIPTION
+)
 from tests.test_cases import get_test_cases
 
 # Cấu hình trang
@@ -243,7 +246,8 @@ def show_month_view():
         )
     
     with col2:
-        selected_year = st.number_input("Chọn năm", min_value=2020, max_value=2030, value=datetime.now().year)
+        current_year = datetime.now().year
+        selected_year = st.number_input("Chọn năm", min_value=current_year - 5, max_value=current_year + 5, value=current_year)
     
     # Tính ngày đầu và cuối tháng
     start = datetime(selected_year, selected_month, 1)
