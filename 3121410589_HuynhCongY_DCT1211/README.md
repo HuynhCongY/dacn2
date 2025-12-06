@@ -130,9 +130,6 @@ Sử dụng form bên dưới nếu:
 
 #### Xuất file JSON
 
-- Backup dữ liệu
-- Chuyển đổi giữa các thiết bị
-
 **Cách dùng:**
 
 1. Click "📤 Xuất JSON"
@@ -196,46 +193,6 @@ Sử dụng form bên dưới nếu:
 
 ---
 
-## ❓ TROUBLESHOOTING
-
-### NLP không parse đúng?
-
-**Giải pháp:**
-
-1. Kiểm tra cú pháp câu nhập
-2. Dùng form nhập thủ công
-3. Xem ví dụ mẫu ở trên
-
-### Thời gian không đúng?
-
-**Nguyên nhân:**
-
-- Giờ trong quá khứ → Tự động sang ngày mai
-- Múi giờ: GMT+7 (Asia/Ho_Chi_Minh)
-
-**Giải pháp:**
-
-- Nhập rõ ngày cụ thể: `ngày 25/12`
-- Dùng `mai`, `thứ 2`, etc.
-
-### Không nhận được nhắc nhở?
-
-**Kiểm tra:**
-
-1. Streamlit có đang chạy?
-2. Trạng thái hệ thống nhắc nhở (sidebar)
-3. Thời gian nhắc đã qua chưa?
-
-### File import bị lỗi?
-
-**Yêu cầu:**
-
-- File JSON phải là mảng `[]`
-- Mỗi sự kiện cần: `event` + `start_time`
-- Format thời gian: ISO 8601
-
----
-
 ## 💡 MẸO SỬ DỤNG
 
 ### 1. Nhập nhanh sự kiện hàng loạt
@@ -246,69 +203,9 @@ Họp team 10h mai ở phòng A101, nhắc trước 10 phút
 Sinh nhật mẹ 8h tối ngày 15/12, nhắc trước 2 giờ
 ```
 
-### 2. Backup định kỳ
-
-- Xuất JSON hàng tuần
-- Lưu vào Google Drive / Dropbox
-
-### 3. Sync nhiều thiết bị
-
-- Xuất ICS từ máy tính
-- Import vào điện thoại
-
-### 4. Tìm kiếm nhanh
+### 2. Tìm kiếm nhanh
 
 - Dùng từ khóa ngắn: `họp`, `khám`, `gym`
 - Tìm theo địa điểm: `phòng 302`
 
 ---
-
-## 📊 THỐNG KÊ HỆ THỐNG
-
-### Độ chính xác NLP
-
-- **Đạt được**: 80.0% (24/30 test cases)
-- **Yêu cầu**: ≥80%
-- **Kết quả**: ✅ ĐẠT
-
-### Test cases bao gồm:
-
-- ✅ Thời gian cơ bản
-- ✅ Địa điểm
-- ✅ Nhắc nhở
-- ✅ Thời gian phức tạp
-- ✅ Văn bản không dấu
-- ✅ Trường hợp đặc biệt
-
----
-
-## 🆘 HỖ TRỢ
-
-### Liên hệ
-
-- **GitHub Issues**: [github.com/HuynhCongY/dacn2/issues](https://github.com/HuynhCongY/dacn2/issues)
-- **Email**: huynhcongy@example.com
-
-### Báo lỗi
-
-Vui lòng cung cấp:
-
-1. Câu nhập liệu
-2. Kết quả mong đợi
-3. Kết quả thực tế
-4. Screenshot (nếu có)
-
----
-
-## 🎯 CHECKLIST SỬ DỤNG HIỆU QUẢ
-
-- [ ] Đã cài đặt đầy đủ dependencies
-- [ ] Hiểu cách nhập sự kiện bằng tiếng Việt
-- [ ] Biết cách xem và quản lý lịch
-- [ ] Đã backup dữ liệu lần đầu
-- [ ] Kiểm tra hệ thống nhắc nhở hoạt động
-- [ ] Nắm rõ cách import/export
-
----
-
-**Chúc bạn sử dụng ứng dụng hiệu quả! 📅✨**
