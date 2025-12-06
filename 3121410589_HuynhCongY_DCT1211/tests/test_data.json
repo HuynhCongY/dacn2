@@ -1,0 +1,332 @@
+[
+  {
+    "id": 1,
+    "text": "Họp nhóm lúc 10 giờ sáng mai ở phòng 302, nhắc trước 15 phút",
+    "expected": {
+      "event": "Họp nhóm",
+      "start_time": "2025-12-07T10:00:00",
+      "end_time": null,
+      "location": "302",
+      "reminder_minutes": 15
+    }
+  },
+  {
+    "id": 2,
+    "text": "Đi khám răng 3 giờ chiều thứ 6 tại phòng khám ABC",
+    "expected": {
+      "event": "Đi khám răng",
+      "start_time": "2025-12-12T15:00:00",
+      "end_time": null,
+      "location": "phòng khám ABC",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 3,
+    "text": "Học tiếng Anh 7h sáng hôm nay",
+    "expected": {
+      "event": "Học tiếng Anh",
+      "start_time": "2025-12-06T07:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 4,
+    "text": "Nộp báo cáo đồ án vào 5 giờ chiều mai",
+    "expected": {
+      "event": "Nộp báo cáo đồ án",
+      "start_time": "2025-12-07T17:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 5,
+    "text": "Đi du lịch Đà Lạt 8h sáng thứ 7",
+    "expected": {
+      "event": "Đi du lịch Đà Lạt",
+      "start_time": "2025-12-13T08:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 6,
+    "text": "Sinh nhật bạn 6 giờ tối chủ nhật ở nhà hàng Hương Sen, nhắc 30p",
+    "expected": {
+      "event": "Sinh nhật bạn",
+      "start_time": "2025-12-07T18:00:00",
+      "end_time": null,
+      "location": "nhà hàng Hương Sen",
+      "reminder_minutes": 30
+    }
+  },
+  {
+    "id": 7,
+    "text": "Tập gym 5h30 chiều mai",
+    "expected": {
+      "event": "Tập gym",
+      "start_time": "2025-12-07T17:30:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 8,
+    "text": "Họp phụ huynh lúc 2 giờ chiều thứ 5 ở trường",
+    "expected": {
+      "event": "Họp phụ huynh",
+      "start_time": "2025-12-11T14:00:00",
+      "end_time": null,
+      "location": "trường",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 9,
+    "text": "Làm bài tập nhóm 9 giờ tối mai tại quán cafe",
+    "expected": {
+      "event": "Làm bài tập nhóm",
+      "start_time": "2025-12-07T21:00:00",
+      "end_time": null,
+      "location": "quán cafe",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 10,
+    "text": "Đi siêu thị 10h sáng thứ 7",
+    "expected": {
+      "event": "Đi siêu thị",
+      "start_time": "2025-12-13T10:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 11,
+    "text": "Phỏng vấn việc làm 14h ngày mai ở văn phòng công ty ABC, nhắc tôi trước 1h",
+    "expected": {
+      "event": "Phỏng vấn việc làm",
+      "start_time": "2025-12-07T14:00:00",
+      "end_time": null,
+      "location": "văn phòng công ty ABC",
+      "reminder_minutes": 60
+    }
+  },
+  {
+    "id": 12,
+    "text": "Đưa xe đi sửa 8 giờ sáng thứ 2",
+    "expected": {
+      "event": "Đưa xe đi sửa",
+      "start_time": "2025-12-08T08:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 13,
+    "text": "Dự lễ cưới 11h trưa chủ nhật tại nhà hàng Golden Palace",
+    "expected": {
+      "event": "Dự lễ cưới",
+      "start_time": "2025-12-07T11:00:00",
+      "end_time": null,
+      "location": "nhà hàng Golden Palace",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 14,
+    "text": "Khám bệnh định kỳ 9h sáng thứ 4 ở bệnh viện Bạch Mai, nhắc 2h",
+    "expected": {
+      "event": "Khám bệnh định kỳ",
+      "start_time": "2025-12-10T09:00:00",
+      "end_time": null,
+      "location": "bệnh viện Bạch Mai",
+      "reminder_minutes": 120
+    }
+  },
+  {
+    "id": 15,
+    "text": "Gặp khách hàng 3 giờ chiều mai",
+    "expected": {
+      "event": "Gặp khách hàng",
+      "start_time": "2025-12-07T15:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 16,
+    "text": "Xem phim 7h tối thứ 6 tại rạp CGV",
+    "expected": {
+      "event": "Xem phim",
+      "start_time": "2025-12-12T19:00:00",
+      "end_time": null,
+      "location": "rạp CGV",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 17,
+    "text": "Đi chợ 6 giờ sáng mai",
+    "expected": {
+      "event": "Đi chợ",
+      "start_time": "2025-12-07T06:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 18,
+    "text": "Seminar công nghệ 1h30 chiều thứ 3 ở phòng hội thảo A101, nhắc 45 phút",
+    "expected": {
+      "event": "Seminar công nghệ",
+      "start_time": "2025-12-09T13:30:00",
+      "end_time": null,
+      "location": "phòng hội thảo A101",
+      "reminder_minutes": 45
+    }
+  },
+  {
+    "id": 19,
+    "text": "Đi bơi 5 giờ chiều hôm nay",
+    "expected": {
+      "event": "Đi bơi",
+      "start_time": "2025-12-06T17:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 20,
+    "text": "Nộp hồ sơ xin học bổng 10h sáng thứ 5 tại phòng hành chính",
+    "expected": {
+      "event": "Nộp hồ sơ xin học bổng",
+      "start_time": "2025-12-11T10:00:00",
+      "end_time": null,
+      "location": "phòng hành chính",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 21,
+    "text": "Tập yoga 6h30 sáng mai",
+    "expected": {
+      "event": "Tập yoga",
+      "start_time": "2025-12-07T06:30:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 22,
+    "text": "Meeting online 4 giờ chiều mai, nhắc 10 phút",
+    "expected": {
+      "event": "Meeting online",
+      "start_time": "2025-12-07T16:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": 10
+    }
+  },
+  {
+    "id": 23,
+    "text": "Đi cắt tóc 2 giờ chiều thứ 7",
+    "expected": {
+      "event": "Đi cắt tóc",
+      "start_time": "2025-12-13T14:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 24,
+    "text": "Học lái xe 8h sáng thứ 2 ở trung tâm dạy lái ABC",
+    "expected": {
+      "event": "Học lái xe",
+      "start_time": "2025-12-08T08:00:00",
+      "end_time": null,
+      "location": "trung tâm dạy lái ABC",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 25,
+    "text": "Đi massage 7h tối mai tại spa Relax",
+    "expected": {
+      "event": "Đi massage",
+      "start_time": "2025-12-07T19:00:00",
+      "end_time": null,
+      "location": "spa Relax",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 26,
+    "text": "Thi cuối kỳ môn Toán 7h30 sáng thứ 4 ở phòng 201, nhắc trước 3h",
+    "expected": {
+      "event": "Thi cuối kỳ môn Toán",
+      "start_time": "2025-12-10T07:30:00",
+      "end_time": null,
+      "location": "201",
+      "reminder_minutes": 180
+    }
+  },
+  {
+    "id": 27,
+    "text": "Đi picnic 9h sáng chủ nhật",
+    "expected": {
+      "event": "Đi picnic",
+      "start_time": "2025-12-07T09:00:00",
+      "end_time": null,
+      "location": null,
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 28,
+    "text": "Đón bạn tại sân bay 11h trưa mai, nhắc 1h",
+    "expected": {
+      "event": "Đón bạn",
+      "start_time": "2025-12-07T11:00:00",
+      "end_time": null,
+      "location": "sân bay",
+      "reminder_minutes": 60
+    }
+  },
+  {
+    "id": 29,
+    "text": "Sửa máy tính 3 giờ chiều thứ 5 ở cửa hàng FPT Shop",
+    "expected": {
+      "event": "Sửa máy tính",
+      "start_time": "2025-12-11T15:00:00",
+      "end_time": null,
+      "location": "cửa hàng FPT Shop",
+      "reminder_minutes": null
+    }
+  },
+  {
+    "id": 30,
+    "text": "Đi karaoke 8 giờ tối thứ 6 tại quán Arirang, nhắc 20p",
+    "expected": {
+      "event": "Đi karaoke",
+      "start_time": "2025-12-12T20:00:00",
+      "end_time": null,
+      "location": "quán Arirang",
+      "reminder_minutes": 20
+    }
+  }
+]
