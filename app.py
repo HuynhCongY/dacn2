@@ -192,7 +192,7 @@ def show_day_view():
         st.write(f"**Có {len(events)} sự kiện trong ngày {selected_date.strftime('%d/%m/%Y')}**")
         
         for event in events:
-            show_event_card(event)
+            show_event_card(event, key_prefix="day")
     else:
         st.info("📭 Không có sự kiện nào trong ngày này")
 
@@ -218,7 +218,7 @@ def show_week_view():
         st.write(f"**Có {len(events)} sự kiện trong tuần**")
         
         for event in events:
-            show_event_card(event)
+            show_event_card(event, key_prefix="week")
     else:
         st.info("📭 Không có sự kiện nào trong tuần này")
 
@@ -255,7 +255,7 @@ def show_month_view():
         st.write(f"**Có {len(events)} sự kiện trong tháng**")
         
         for event in events:
-            show_event_card(event)
+            show_event_card(event, key_prefix="month")
     else:
         st.info("📭 Không có sự kiện nào trong tháng này")
 
@@ -273,12 +273,12 @@ def show_search_view():
             st.write(f"**Tìm thấy {len(events)} sự kiện**")
             
             for event in events:
-                show_event_card(event)
+                show_event_card(event, key_prefix="search")
         else:
             st.info("📭 Không tìm thấy sự kiện nào")
 
 
-def show_event_card(event):
+def show_event_card(event, key_prefix=""):
     """Hiển thị card cho một sự kiện"""
     with st.container():
         col1, col2 = st.columns([4, 1])
@@ -297,11 +297,11 @@ def show_event_card(event):
                 st.write(f"📝 **Mô tả:** {event['description']}")
         
         with col2:
-            if st.button("✏️ Sửa", key=f"edit_{event['id']}"):
+            if st.button("✏️ Sửa", key=f"{key_prefix}_edit_{event['id']}"):
                 st.session_state.editing_event = event['id']
                 st.rerun()
             
-            if st.button("🗑️ Xóa", key=f"delete_{event['id']}"):
+            if st.button("🗑️ Xóa", key=f"{key_prefix}_delete_{event['id']}"):
                 if st.session_state.db.delete_event(event['id']):
                     st.success("✅ Đã xóa sự kiện")
                     st.rerun()
