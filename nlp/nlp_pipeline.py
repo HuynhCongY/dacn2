@@ -99,13 +99,6 @@ class VietnameseNLPPipeline:
         if not start_time:
             raise ValueError("Không thể trích xuất thời gian")
         
-        # Kiểm tra thời gian hợp lệ (không quá xa trong quá khứ)
-        now = datetime.now()
-        if start_time < now.replace(hour=0, minute=0, second=0, microsecond=0):
-            # Nếu thời gian trong quá khứ (trước hôm nay), có thể là lỗi
-            # Nhưng vẫn cho phép trong ngày hôm nay
-            pass
-        
         # Tạo kết quả
         result = {
             'event_name': event_name,

@@ -30,13 +30,16 @@ class RuleExtractor:
         # Pattern để tìm vị trí bắt đầu thông tin thời gian
         time_indicators = [
             r'lúc\s+\d',
+            r'luc\s+\d',
             r'vào\s+\d',
+            r'vao\s+\d',
             r'\d+\s*giờ',
+            r'\d+\s*gio',
             r'\d+h',
             r'\d+:\d+',
             r'hôm nay',
             r'hom nay',
-            r'mai',
+            r'mai\b',
             r'ngày mai',
             r'ngay mai',
             r'tuần sau',
@@ -47,18 +50,37 @@ class RuleExtractor:
             r'chu nhat',
         ]
         
+        # Pattern để tìm vị trí bắt đầu địa điểm
+        location_indicators = [
+            r'\s+ở\s+',
+            r'\s+o\s+',
+            r'\s+tại\s+',
+            r'\s+tai\s+',
+            r'\s+phòng\s+',
+            r'\s+phong\s+',
+            r'\s+lớp\s+',
+            r'\s+lop\s+',
+        ]
+        
         # Tìm vị trí đầu tiên xuất hiện thông tin thời gian
         earliest_pos = len(text)
+        
         for pattern in time_indicators:
             match = re.search(pattern, text, re.IGNORECASE)
             if match and match.start() < earliest_pos:
                 earliest_pos = match.start()
         
-        # Tên sự kiện là phần trước thông tin thời gian
+        # Tìm vị trí đầu tiên xuất hiện thông tin địa điểm
+        for pattern in location_indicators:
+            match = re.search(pattern, text, re.IGNORECASE)
+            if match and match.start() < earliest_pos:
+                earliest_pos = match.start()
+        
+        # Tên sự kiện là phần trước thông tin thời gian/địa điểm
         if earliest_pos < len(text):
             event_name = text[:earliest_pos].strip()
         else:
-            # Nếu không tìm thấy thời gian, lấy phần trước dấu phẩy đầu tiên
+            # Nếu không tìm thấy, lấy phần trước dấu phẩy đầu tiên
             if ',' in text:
                 event_name = text.split(',')[0].strip()
             else:
