@@ -73,17 +73,17 @@ def show_add_event_page():
                 # Hiển thị preview
                 st.subheader("📋 Thông tin đã trích xuất:")
                 
-                col1, col2 = st.columns(2)
+                st.write(f"**Tên sự kiện:** {result['event_name']}")
+                st.write(f"🕐 **Thời gian:** {result['start_time'].strftime('%H:%M - %d/%m/%Y')}")
                 
-                with col1:
-                    st.write(f"**Tên sự kiện:** {result['event_name']}")
-                    st.write(f"**Thời gian:** {result['start_time'].strftime('%H:%M - %d/%m/%Y')}")
+                if result.get('location'):
+                    st.write(f"📍 **Địa điểm:** {result['location']}")
                 
-                with col2:
-                    if result.get('location'):
-                        st.write(f"**Địa điểm:** {result['location']}")
-                    if result.get('reminder_minutes'):
-                        st.write(f"**Nhắc trước:** {result['reminder_minutes']} phút")
+                if result.get('reminder_minutes') and result['reminder_minutes'] > 0:
+                    st.write(f"⏰ **Nhắc trước:** {result['reminder_minutes']} phút")
+                
+                if result.get('description'):
+                    st.write(f"📝 **Mô tả:** {result['description']}")
                 
                 # Lưu vào database
                 event_id = st.session_state.db.add_event(result)
@@ -285,13 +285,13 @@ def show_event_card(event, key_prefix=""):
         
         with col1:
             st.markdown(f"### {event['event_name']}")
-            st.write(f"⏰ **Thời gian:** {event['start_time'].strftime('%H:%M - %d/%m/%Y')}")
+            st.write(f"🕐 **Thời gian:** {event['start_time'].strftime('%H:%M - %d/%m/%Y')}")
             
             if event.get('location'):
                 st.write(f"📍 **Địa điểm:** {event['location']}")
             
-            if event.get('reminder_minutes'):
-                st.write(f"🔔 **Nhắc trước:** {event['reminder_minutes']} phút")
+            if event.get('reminder_minutes') and event['reminder_minutes'] > 0:
+                st.write(f"⏰ **Nhắc trước:** {event['reminder_minutes']} phút")
             
             if event.get('description'):
                 st.write(f"📝 **Mô tả:** {event['description']}")
